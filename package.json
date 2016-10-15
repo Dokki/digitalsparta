@@ -1,0 +1,31 @@
+{
+  "name": "digitalsparta",
+  "version": "1.0.0",
+  "description": "SPA мини прототипа админки",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avlek/digitalsparta.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Avlek/digitalsparta/issues"
+  },
+  "homepage": "https://github.com/Avlek/digitalsparta#readme",
+  "devDependencies": {
+    "ts-loader": "^0.9.1",
+    "typescript": "^2.0.3"
+  },
+  "dependencies": {
+    "angular2": "^2.0.0-beta.17",
+    "core-js": "^2.4.1",
+    "es6-shim": "^0.35.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "^5.0.0-rc.1",
+    "zone.js": "^0.6.25"
+  }
+}
