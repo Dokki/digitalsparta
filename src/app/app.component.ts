@@ -1,8 +1,11 @@
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
+import { EventService } from './events/shared/event.service';
+import { SpeakerService } from './speakers/shared/speaker.service';
 
 @Component({
     selector: 'my-app',
-    template: `<h1>My First Angular 2 App</h1>`,
+    templateUrl: './app.component.html',
+    providers: [ EventService, SpeakerService ]
 })
 
 export class AppComponent { }

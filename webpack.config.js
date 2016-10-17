@@ -1,6 +1,6 @@
 module.exports = {
     entry: {
-        app: "./src/index.ts",
+        app: "./src/main.ts",
         polyfill: "./src/polyfill.ts",
         vendor: "./src/vendor.ts"
     },
@@ -11,11 +11,17 @@ module.exports = {
         loaders: [
             {
                 test: /\.ts$/,
-                loader: "ts-loader",
+                loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
+                exclude: /node_modules/
+            },
+            {
+                test: /\.html/,
+                loader: "raw-loader",
                 exclude: /node_modules/
             }
         ]
     },
+    watch: true,
     resolve: {
         extensions: ["", ".js", ".ts"]
     }
