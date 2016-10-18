@@ -5,16 +5,7 @@ import { EventService } from './shared/event.service';
 
 @Component({
     selector: 'event-list',
-    template: `
-      <table>
-        <tr *ngFor="let event of events">
-            <td>{{event.BeginDate}}</td>
-            <td>{{event.EndDate}}</td>
-            <td>{{event.Title}}</td>
-            <td>{{event.Description}}</td>
-        </tr>
-      </table>
-    `
+    templateUrl: './events.component.html'
 })
 
 export class EventsComponent implements OnInit {
