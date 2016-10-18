@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { EventService } from './events/shared/event.service';
 import { SpeakerService } from './speakers/shared/speaker.service';
 
