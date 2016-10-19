@@ -1,5 +1,5 @@
 import { NgModule }     from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule,  } from '@angular/router';
 
 import { EventsComponent } from './events/events.component';
 import { SpeakersComponent } from './speakers/speakers.component';
