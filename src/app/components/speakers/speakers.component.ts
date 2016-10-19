@@ -5,7 +5,7 @@ import { SpeakerService } from './shared/speaker.service';
 
 @Component({
     selector: 'speaker-list',
-    templateUrl: './speakers.component.html'
+    templateUrl: 'speakers.component.html'
 })
 
 export class SpeakersComponent implements OnInit {

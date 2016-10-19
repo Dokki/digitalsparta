@@ -9,8 +9,6 @@ import { Event } from './event.model';
 
 @Injectable()
 export class EventService {
-    token: string;
-
     constructor(private http: Http) { }
 
     getEvents(): Observable<Event[]> {

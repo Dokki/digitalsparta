@@ -1,0 +1,21 @@
+<div class="nav-md">
+    <div class="container body">
+        <div class="col-md-3 left_col">
+            <div class="main_menu_side hidden-print main_menu">
+                <div class="menu_section">
+                    <ul class="nac side-menu">
+                        <li>
+                            <a routerLink="/events" routerLinkActive="active">Events</a>
+                        </li>
+                        <li>
+                            <a routerLink="/speakers" routerLinkActive="active">Speakers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 right_col" style="min-height: 1200px">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

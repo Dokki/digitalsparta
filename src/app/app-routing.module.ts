@@ -1,19 +1,17 @@
 import { NgModule }     from '@angular/core';
 import { RouterModule,  } from '@angular/router';
 
-import { EventsComponent } from './events/events.component';
-import { SpeakersComponent } from './speakers/speakers.component';
+import { EventsComponent } from './components/events/events.component';
+import { SpeakersComponent } from './components/speakers/speakers.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
             { path: 'events', component: EventsComponent },
             { path: 'speakers', component: SpeakersComponent },
-            {
-                path: '',
-                redirectTo: '/events',
-                pathMatch: 'full'
-            }
+            { path: 'login', component: LoginComponent },
+            { path: '', redirectTo: '/login', pathMatch: 'full' }
         ])
     ],
     exports: [
