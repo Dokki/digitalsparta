@@ -2,23 +2,23 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './components/app.component';
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { EventsComponent } from './components/events/events.component';
-import { SpeakersComponent } from './components/speakers/speakers.component';
-import { LoginComponent } from './components/login/login.component';
+import { EventsComponent } from './events/events.component';
+import { SpeakersModule }         from './speakers/speakers.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
     imports: [
         BrowserModule,
         HttpModule,
+        SpeakersModule,
         AppRoutingModule
     ],
     declarations: [
         AppComponent,
         EventsComponent,
-        SpeakersComponent,
         LoginComponent
     ],
     bootstrap: [ AppComponent ]

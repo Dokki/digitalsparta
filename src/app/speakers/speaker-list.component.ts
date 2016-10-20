@@ -5,10 +5,10 @@ import { SpeakerService } from './shared/speaker.service';
 
 @Component({
     selector: 'speaker-list',
-    templateUrl: 'speakers.component.html'
+    templateUrl: 'speaker-list.component.html'
 })
 
-export class SpeakersComponent implements OnInit {
+export class SpeakerListComponent implements OnInit {
     errorMessage: string;
     speakers: Speaker[] = [];
 

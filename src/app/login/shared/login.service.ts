@@ -46,7 +46,6 @@ export class LoginService {
             )
             .map(res => res.json())
             .map((res) => {
-                console.log(res);
                 if (res.session) {
                     localStorage.setItem('auth_token', res.session.token);
                     this.loggedIn = true;

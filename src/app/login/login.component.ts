@@ -13,7 +13,6 @@ export class LoginComponent {
 
     onSubmit(login: string, password: string) {
         this.LoginService.login(login, password).subscribe((result) => {
-            console.log(result);
             if (result) {
                 this.router.navigate(['/events']);
             }
