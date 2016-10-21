@@ -4,8 +4,10 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginService } from './login/shared/login.service';
+import { AuthGuard } from './auth-guard.service';
 
-import { EventsComponent } from './events/events.component';
+import { EventsModule } from './events/events.module';
 import { SpeakersModule }         from './speakers/speakers.module';
 import { LoginComponent } from './login/login.component';
 
@@ -13,14 +15,15 @@ import { LoginComponent } from './login/login.component';
     imports: [
         BrowserModule,
         HttpModule,
+        EventsModule,
         SpeakersModule,
         AppRoutingModule
     ],
     declarations: [
         AppComponent,
-        EventsComponent,
         LoginComponent
     ],
+    providers: [ LoginService, AuthGuard ],
     bootstrap: [ AppComponent ]
 })
 

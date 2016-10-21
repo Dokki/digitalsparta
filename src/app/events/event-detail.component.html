@@ -1,0 +1,52 @@
+<div class="nav-md">
+    <div class="container body">
+        <div class="col-md-3 left_col">
+            <div class="main_menu_side hidden-print main_menu">
+                <div class="menu_section">
+                    <ul class="nav side-menu">
+                        <li>
+                            <a routerLink="/events" routerLinkActive="active">Events</a>
+                        </li>
+                        <li>
+                            <a routerLink="/speakers" routerLinkActive="active">Speakers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right_col" style="min-height: 1200px">
+            <div class="page-title">
+                <div class="title-left">
+                    <h3>Edit Event</h3>
+                </div>
+            </div>
+            <div *ngIf="event">
+              <h3>"{{event.Title}}"</h3>
+              <div>
+                <label>Id: </label>{{event._id}}</div>
+              <div>
+                <label>BeginDate: </label>
+                <input [(ngModel)]="event.BeginDate" type="date"/>
+              </div>
+              <div>
+                <label>EndDate: </label>
+                <input [(ngModel)]="event.EndDate" type="date"/>
+              </div>
+              <div>
+                <label>Title: </label>
+                <input [(ngModel)]="event.Title" placeholder="title"/>
+              </div>
+              <div>
+                <label>Description: </label>
+                <textarea [(ngModel)]="event.Description" placeholder="desciption">
+                  {{event.Description }}
+                </textarea>
+              </div>
+              <p>
+                <button (click)="saveEvent(event)">Сохранить</button>
+                <button (click)="gotoEvents()">Назад</button>
+              </p>
+            </div>
+        </div>
+    </div>
+</div>

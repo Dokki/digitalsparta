@@ -22,7 +22,17 @@ export class SpeakerService {
     }
 
     getSpeaker(id: string) {
-        return this.getSpeakers().map(speakers => speakers.find(speaker => speaker.id === id));
+        return this.getSpeakers().map(speakers => speakers.find(speaker => speaker._id === id));
+    }
+
+    updateSpeaker(speaker: Speaker): Observable<Speaker> {
+        let headers = new Headers({
+            'QB-token': localStorage.getItem('auth_token')
+        });
+        let options = new RequestOptions({headers: headers});
+        let body = JSON.stringify(speaker);
+        let url = 'https://api.quickblox.com/data/Speaker/'+speaker._id+'.json';
+        return this.http.put(url, body, options).map((res) => res.json()).catch(this.handleError);
     }
 
     private handleError (error: any) {

@@ -21,4 +21,17 @@ export class SpeakerDetailComponent implements OnInit {
         this.service.getSpeaker(params['id']).subscribe(speaker => this.speaker = speaker);
       });
     }
+
+    gotoSpeakers() {
+      this.router.navigate(['/speakers']);
+    }
+
+    saveSpeaker(speaker: Speaker) {
+      this.service.updateSpeaker(speaker).subscribe((speaker) => {
+        console.log(speaker);
+        if (speaker){
+          this.router.navigate(['/speakers']);
+        }
+      });
+    }    
 }

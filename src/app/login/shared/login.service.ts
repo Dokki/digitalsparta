@@ -17,14 +17,14 @@ export class LoginService {
         this.loggedIn = !!localStorage.getItem('auth_token');
     }
 
-    login(login: string, password: string) {
+    login(username: string, password: string) {
         let headers = new Headers({
             'Content-Type': 'application/json',
             'QuickBlox-REST-API-Version': '0.1.0'
         });
         let options = new RequestOptions({headers: headers});
         let timestamp = Math.round(Date.now()/1000);
-        let queryString = "application_id="+this.config.appId+"&auth_key="+this.config.auth_key+"&nonce=33432&timestamp="+timestamp+"&user[login]="+login+"&user[password]="+password;
+        let queryString = "application_id="+this.config.appId+"&auth_key="+this.config.auth_key+"&nonce=33432&timestamp="+timestamp+"&user[login]="+username+"&user[password]="+password;
         let signature = Crypto.HmacSHA1(queryString, this.config.auth_secret).toString();
         let body = {
             "application_id": this.config.appId,
@@ -33,7 +33,7 @@ export class LoginService {
             "timestamp": timestamp,
             "signature": signature,
             "user": {
-                "login": login,
+                "login": username,
                 "password": password
             }
         };

@@ -1,4 +1,3 @@
-// login.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -11,8 +10,8 @@ import { LoginService } from './shared/login.service';
 export class LoginComponent {
     constructor(private LoginService: LoginService, private router: Router) {}
 
-    onSubmit(login: string, password: string) {
-        this.LoginService.login(login, password).subscribe((result) => {
+    onSubmit(username: string, password: string) {
+        this.LoginService.login(username, password).subscribe((result) => {
             if (result) {
                 this.router.navigate(['/events']);
             }
